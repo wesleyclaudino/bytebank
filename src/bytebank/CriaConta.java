@@ -4,10 +4,13 @@ public class CriaConta {
 	
 	public static void main(String[] args) {
 		Conta primeiraConta = new Conta();
-		primeiraConta.saldo += 200;
-		primeiraConta.agencia = 123;
-		primeiraConta.numero = 10;
+		primeiraConta.setTitular(new Cliente());
 		
-		System.out.println("\n Bem-vindo(a), " + primeiraConta.titular + "\n Seu saldo é de: " + primeiraConta.saldo);
+		primeiraConta.deposita(200);
+		primeiraConta.setAgencia(123);
+		primeiraConta.setNumero(10);
+		
+		primeiraConta.getTitular().setNome("Primeira Conta");
+		System.out.println("\n Bem-vindo(a), " + primeiraConta.getTitular().getNome() + "\n Seu saldo é de: " + primeiraConta.getSaldo());
 	}
 }
