@@ -3,7 +3,7 @@ package bytebank;
 public class TestaMetodo {
 	
 	public static void main(String[] args) {
-		Conta contaDoFulano = new Conta();
+		Conta contaDoFulano = new Conta(1337, 24226);
 		contaDoFulano.setTitular(new Cliente());
 		
 		contaDoFulano.getTitular().setNome("Fulano da Silva");
@@ -14,7 +14,7 @@ public class TestaMetodo {
 		contaDoFulano.saca(20);
 		System.out.println("Saque efetuado com sucesso. " + contaDoFulano.getTitular().getNome() + ", seu novo saldo é de: " + contaDoFulano.getSaldo());
 		
-		Conta contaDoSicrano = new Conta();
+		Conta contaDoSicrano = new Conta(1337, 24227);
 		contaDoSicrano.setTitular(new Cliente());
 		
 		contaDoSicrano.getTitular().setNome("Sicrano Avelar");

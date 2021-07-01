@@ -5,6 +5,13 @@ public class  Conta{
 	private int agencia;
 	private int numero;
 	private Cliente titular;
+	private static int totalDeContas;
+	
+	public Conta(int agencia, int numero) {
+		totalDeContas++;
+		this.agencia = agencia;
+		this.numero = numero;
+	}
 	
 	public void deposita(double valor) {
 		this.saldo += valor;
@@ -37,6 +44,10 @@ public class  Conta{
 		return this.agencia;
 	}
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("Valor inválido.");
+			return;
+		}
 		this.agencia = agencia;
 	}
 	
@@ -44,6 +55,10 @@ public class  Conta{
 		return this.numero;
 	}
 	public void setNumero(int numero) {
+		if(numero <= 0) {
+			System.out.println("Valor inválido.");
+			return;
+		}
 		this.numero = numero;
 	}
 	
@@ -52,5 +67,9 @@ public class  Conta{
 	}
 	public void setTitular(Cliente titular) {
 		this.titular = titular;
+	}
+	
+	public static int getTotal() {
+		return totalDeContas;
 	}
 }
