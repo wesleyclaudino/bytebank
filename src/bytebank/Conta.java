@@ -4,6 +4,7 @@ public class  Conta{
 	private double saldo;
 	private int agencia;
 	private int numero;
+	private int operacao;
 	private Cliente titular;
 	private static int totalDeContas;
 	
@@ -60,6 +61,13 @@ public class  Conta{
 			return;
 		}
 		this.numero = numero;
+	}
+	
+	public int getOperacao() {
+		return this.operacao;
+	}
+	public void setOperacao(int operacao) {
+		this.operacao = operacao;
 	}
 	
 	public Cliente getTitular() {
