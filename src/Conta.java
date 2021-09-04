@@ -1,4 +1,3 @@
-package bytebank;
 
 public abstract class Conta {
 	protected double saldo;
@@ -14,9 +13,11 @@ public abstract class Conta {
 		this.agencia = agencia;
 		this.numero = numero;
 	}
-	public abstract void deposita(double valor);
-	public abstract boolean saca(double valor);
-	public abstract boolean transfere(double valor, Conta destino);
+	public void deposita(double valor) {
+		this.saldo += valor;
+	}
+	public abstract void saca(double valor);
+	public abstract void transfere(double valor, Conta destino);
 	
 	public double getSaldo() {
 		return this.saldo;

@@ -1,4 +1,3 @@
-package bytebank;
 
 public class Titular {
 	private String nome;
